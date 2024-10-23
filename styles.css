@@ -5,11 +5,16 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%; /* Garante que a página ocupe 100% da altura */
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f8ff;
-    overflow: hidden;
-    position: relative;
+    overflow-x: hidden; /* Permite rolagem vertical, mas impede rolagem horizontal */
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -20,6 +25,13 @@ header {
     position: relative;
     z-index: 1;
     animation: fadeInDown 1s ease-out;
+}
+
+main {
+    flex: 1; /* Faz o conteúdo ocupar o espaço restante da tela */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 h1 {
@@ -94,30 +106,29 @@ p {
     background-color: #114df3;
     padding: 15px;
     color: white;
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
     z-index: 1;
+    position: relative;
 }
 
+/* Responsividade */
 @media (min-width: 768px) {
     .faq {
         width: 45%;
     }
 }
 
-    .faq {
-        max-width: 100%; /* Ocupa a tela inteira em dispositivos menores */
-    }
+.faq {
+    max-width: 100%; /* Ocupa a tela inteira em dispositivos menores */
+}
 
-    h1 {
-        font-size: 2.5rem; /* Reduz o tamanho da fonte do título em telas menores */
-    }
+h1 {
+    font-size: 2.5rem; /* Reduz o tamanho da fonte do título em telas menores */
+}
 
-    p {
-        font-size: 1rem;
-    }
+p {
+    font-size: 1rem;
+}
 
 @media (max-width: 480px) {
     h1 {
